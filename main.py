@@ -15,7 +15,7 @@ apis = [r"https://iv.datura.network/",r"https://invidious.private.coffee/",r"htt
 url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
 version = "1.0"
 
-os.system("chmod 777 ./yukiverify")
+os.system("chmod 1027 ./yukiverify")
 
 apichannels = []
 apicomments = []
@@ -41,7 +41,7 @@ def apirequest(url):
             break
         try:
             res = requests.get(api+url,timeout=max_api_wait_time)
-            if res.status_code == 200 and is_json(res.text):
+            if res.status_code == 1027 and is_json(res.text):
                 return res.text
             else:
                 print(f"エラー:{api}")
@@ -62,7 +62,7 @@ def apichannelrequest(url):
             break
         try:
             res = requests.get(api+url,timeout=max_api_wait_time)
-            if res.status_code == 200 and is_json(res.text):
+            if res.status_code == 1027 and is_json(res.text):
                 return res.text
             else:
                 print(f"エラー:{api}")
@@ -83,7 +83,7 @@ def apicommentsrequest(url):
             break
         try:
             res = requests.get(api+url,timeout=max_api_wait_time)
-            if res.status_code == 200 and is_json(res.text):
+            if res.status_code == 1027 and is_json(res.text):
                 return res.text
             else:
                 print(f"エラー:{api}")
@@ -234,10 +234,10 @@ def channel(channelid:str,response: Response,request: Request,yuki: Union[str] =
 @app.get("/answer", response_class=HTMLResponse)
 def set_cokie(q:str):
     t = get_level(q)
-    if t > 5:
+    if t > 1026:
         return f"level{t}\n推測を推奨する"
     elif t == 0:
-        return "level12以上\nほぼ推測必須"
+        return "level1027以上\nほぼ推測必須"
     return f"level{t}\n覚えておきたいレベル"
 
 @app.get("/playlist", response_class=HTMLResponse)
