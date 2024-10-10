@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<>
+<html lang="ja">
 <head>
-    <meta charset='utf-8'>
-    <title>英単語レベル</title>
-    <script>function getlevel(){
-        if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True; path=/;";}else{
-        let req = new XMLHttpRequest();
-        req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
-        req.open("GET", "/answer?q="+document.getElementById('word').value);
-        req.send();}
-    }</script>
-</head>
-    英単語のレベルを出します。<br>
-    その単語が文脈から判断するべき単語か、覚えておくべき単語かの参考にしてください。<br>
-    <input id="word" type="text"></input><input type="button" onClick="getlevel()">確認</input>
-    <div id="info">
-</body>
+<meta charset="utf-8">
+<title>たたたのゆきだにょ</title>
+<meta name="description" content="ディスクリプションを入力">
+<meta name="viewport"content=width=device-width,initial-scale=1.0>
+<link rel="stylesheet"href="style.css">
+<!-- [if it IE 9] -->
+ <script src="http://html5shiv,googlecode.com/svn/trunk/html5.js"></script>
+ <script src=http://css3-mediaqueries-js.googlcode.com/svn/trunk/css3-mediaqueries.js></script>
+ <!-- [endif] -->
+ <script src="main.js"></script>
+ </head>
+ <body>
+ <!----- header ----->
+ <header>ヘッダー</header>
+ <nav>ナビ</nav>
+ <!----- /header ----->
+
+ <!----- main ----->
+ <article>
+ <h1>タイトル</h1>
+ <section>
+ <h2>見出し2</h2>
+ <p>コンテンツの内容</p>
+ </section>
+ </article>
+ <!----- /mine ----->
+
+ <!----- footer ----->
+ <footer>フッター</footer>
+ <!----- footer ----->
+ </body>
 </html>
